@@ -1,1 +1,1 @@
-# -Standardly.Templates
+# Standardly.Templates
