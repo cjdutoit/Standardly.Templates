@@ -1,0 +1,215 @@
+{
+  "name": "DATA: Custom Entity",
+  "description": "Generates a custom entity as per the Entity Model Builder specification",
+  "templateType": "DATA",
+  "projectsRequired": "Api",
+  "sortOrder": 1,
+  "tasks": [
+    {
+      "name": "001 - DATA: $safeItemNameSingular$ Model",
+      "branchName": "users/$username$/data-$safeItemNameSingular$",
+      "actions": [
+        {
+          "name": "Create branch",
+          "executionFolder": "$projectFolder$",
+          "primaryAction": false,
+          "executions": [
+            {
+              "name": "Create new branch",
+              "instruction": "git checkout -b users/$username$/$currentBranch$ users/$username$/$previousBranch$"
+            },
+            {
+              "name": "Install EFxceptions from NuGet",
+              "instruction": "dotnet add $projectFile$ package EFxceptions"
+            },
+            {
+              "name": "Install Microsoft.EntityFrameworkCore.SqlServer from NuGet",
+              "instruction": "dotnet add $projectFile$ package Microsoft.EntityFrameworkCore.SqlServer"
+            },
+            {
+              "name": "Install Microsoft.EntityFrameworkCore.Tools from NuGet",
+              "instruction": "dotnet add $projectFile$ package Microsoft.EntityFrameworkCore.Tools"
+            }
+          ]
+        },
+        {
+          "name": "Add Model and Storage Broker",
+          "executionFolder": "$projectFolder$",
+          "files": [
+            {
+              "template": "$templateFolder$\\$language$\\Api\\Data\\CustomModel\\001_Item.cs.txt",
+              "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\$safeItemNameSingular$.cs",
+              "replace": false
+            },
+            {
+              "template": "$templateFolder$\\$language$\\Api\\Data\\CustomModel\\001_IStorageBroker.cs.txt",
+              "target": "$projectFolder$\\$brokers$\\Storages\\IStorageBroker.cs",
+              "replace": false
+            },
+            {
+              "template": "$templateFolder$\\$language$\\Api\\Data\\CustomModel\\001_IStorageBroker.Items.cs.txt",
+              "target": "$projectFolder$\\$brokers$\\Storages\\IStorageBroker.$safeItemNamePlural$.cs",
+              "replace": true
+            },
+            {
+              "template": "$templateFolder$\\$language$\\Api\\Data\\CustomModel\\001_StorageBroker.cs.txt",
+              "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.cs",
+              "replace": false
+            },
+            {
+              "template": "$templateFolder$\\$language$\\Api\\Data\\CustomModel\\001_StorageBroker.Items.cs.txt",
+              "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.$safeItemNamePlural$.cs",
+              "replace": true
+            }
+          ],
+          "appends": [
+            {
+              "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.cs",
+              "doesNotContainContent": "private static void AddConfigurations(ModelBuilder modelBuilder)",
+              "regexToMatchForAppend": "(?<=public partial class StorageBroker : EFxceptionsContext, IStorageBroker\\r\\n    \\{\\r\\n)([\\S\\s]*?)(?=\\r\\n    \\}\\r\\n)",
+              "contentToAppend": "\r\n\r\n        private static void AddConfigurations(ModelBuilder modelBuilder)\r\n        {\r\n        }",
+              "appendToBeginning": false,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.cs",
+              "doesNotContainContent": "private static void AddSeedData(ModelBuilder modelBuilder)",
+              "regexToMatchForAppend": "(?<=public partial class StorageBroker : EFxceptionsContext, IStorageBroker\\r\\n    \\{\\r\\n)([\\S\\s]*?)(?=\\r\\n    \\}\\r\\n)",
+              "contentToAppend": "\r\n\r\n        private void AddSeedData(ModelBuilder modelBuilder)\r\n        {\r\n        }",
+              "appendToBeginning": false,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.cs",
+              "doesNotContainContent": "",
+              "regexToMatchForAppend": "(?<=protected override void OnModelCreating\\(ModelBuilder modelBuilder\\)\\r\\n        \\{\\r\\n)([\\S\\s]*?)(?=        \\}\\r\\n)",
+              "contentToAppend": "            AddConfigurations(modelBuilder);\r\n",
+              "appendToBeginning": false,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.cs",
+              "doesNotContainContent": "",
+              "regexToMatchForAppend": "(?<=protected override void OnModelCreating\\(ModelBuilder modelBuilder\\)\\r\\n        \\{\\r\\n)([\\S\\s]*?)(?=        \\}\\r\\n)",
+              "contentToAppend": "            AddSeedData(modelBuilder);\r\n",
+              "appendToBeginning": false,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\Startup.cs",
+              "doesNotContainContent": "private static void AddBrokers(IServiceCollection services)",
+              "regexToMatchForAppend": "(?<=public class Startup\\r\\n    \\{\\r\\n)([\\S\\s]*?)(?=\\r\\n    \\}\\r\\n)",
+              "contentToAppend": "\r\n\r\n        private static void AddBrokers(IServiceCollection services)\r\n        {\r\n        }",
+              "appendToBeginning": false,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\Startup.cs",
+              "doesNotContainContent": "private static void AddFoundations(IServiceCollection services)",
+              "regexToMatchForAppend": "(?<=public class Startup\\r\\n    \\{\\r\\n)([\\S\\s]*?)(?=\\r\\n    \\}\\r\\n)",
+              "contentToAppend": "\r\n\r\n        private static void AddFoundations(IServiceCollection services)\r\n        {\r\n        }",
+              "appendToBeginning": false,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\Startup.cs",
+              "doesNotContainContent": "private static void AddProcessings(IServiceCollection services)",
+              "regexToMatchForAppend": "(?<=public class Startup\\r\\n    \\{\\r\\n)([\\S\\s]*?)(?=\\r\\n    \\}\\r\\n)",
+              "contentToAppend": "\r\n\r\n        private static void AddProcessings(IServiceCollection services)\r\n        {\r\n        }",
+              "appendToBeginning": false,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\Startup.cs",
+              "doesNotContainContent": "private static void AddOrchestrations(IServiceCollection services)",
+              "regexToMatchForAppend": "(?<=public class Startup\\r\\n    \\{\\r\\n)([\\S\\s]*?)(?=\\r\\n    \\}\\r\\n)",
+              "contentToAppend": "\r\n\r\n        private static void AddOrchestrations(IServiceCollection services)\r\n        {\r\n        }",
+              "appendToBeginning": false,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\Startup.cs",
+              "doesNotContainContent": "",
+              "regexToMatchForAppend": "(?<=public void ConfigureServices\\(IServiceCollection services\\)\\r\\n        \\{\\r\\n)([\\S\\s]*?)(?=\\n        \\}\\r\\n)",
+              "contentToAppend": "            AddOrchestrations(services);\r\n",
+              "appendToBeginning": true,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\Startup.cs",
+              "doesNotContainContent": "",
+              "regexToMatchForAppend": "(?<=public void ConfigureServices\\(IServiceCollection services\\)\\r\\n        \\{\\r\\n)([\\S\\s]*?)(?=\\n        \\}\\r\\n)",
+              "contentToAppend": "            AddProcessings(services);\r\n",
+              "appendToBeginning": true,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\Startup.cs",
+              "doesNotContainContent": "",
+              "regexToMatchForAppend": "(?<=public void ConfigureServices\\(IServiceCollection services\\)\\r\\n        \\{\\r\\n)([\\S\\s]*?)(?=\\n        \\}\\r\\n)",
+              "contentToAppend": "            AddFoundations(services);\r\n",
+              "appendToBeginning": true,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\Startup.cs",
+              "doesNotContainContent": "",
+              "regexToMatchForAppend": "(?<=public void ConfigureServices\\(IServiceCollection services\\)\\r\\n        \\{\\r\\n)([\\S\\s]*?)(?=\\n        \\}\\r\\n)",
+              "contentToAppend": "            AddBrokers(services);\r\n",
+              "appendToBeginning": true,
+              "appendEvenIfContentAlreadyExist": false
+            },
+            {
+              "target": "$projectFolder$\\Startup.cs",
+              "doesNotContainContent": "",
+              "regexToMatchForAppend": "(?<=private static void AddBrokers\\(IServiceCollection services\\)\\r\\n        \\{\\r\\n)([\\S\\s]*?)(?=        \\}\\r\\n)",
+              "contentToAppend": "            services.AddTransient<IStorageBroker, StorageBroker>();\r\n",
+              "appendToBeginning": false,
+              "appendEvenIfContentAlreadyExist": false
+            }
+          ],
+          "executions": [
+            {
+              "name": "Add $safeItemNameSingular$ Model Migration",
+              "instruction": "dotnet ef migrations add Add$safeItemNameSingular$Model --project $projectName$.csproj"
+            },
+            {
+              "name": "Update Database",
+              "instruction": "dotnet ef database update"
+            },
+            {
+              "name": "Stage all changes",
+              "instruction": "git add -A"
+            },
+            {
+              "name": "Commit staged changes",
+              "instruction": "git commit -m \"DATA: $safeItemNameSingular$ Model\""
+            },
+            {
+              "name": "Push changes to <remote>",
+              "instruction": "git push origin %%taskBranch%%"
+            }
+          ]
+        },
+        {
+          "name": "Create Pull Request",
+          "executionFolder": "$projectFolder$",
+          "primaryAction": false,
+          "executions": [
+            {
+              "name": "Create Pull Request",
+              "instruction": "gh pr create $draftPullRequest$ -t \"DATA: $safeItemNameSingular$ Model\" -b \" \""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cleanupTasks": [
+    "----------------------------------------------------",
+    "DATA: $safeItemNameSingular$ Model",
+    "----------------------------------------------------",
+    "* Link the pull request(s) to related issues by adding e.g. #CLOSES 123 to the description",
+    "* Review Draft Pull Requests (and add more commits by pushing to any of the branches if needed):"
+  ]
+}

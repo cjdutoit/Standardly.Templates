@@ -1,0 +1,9 @@
+﻿using System;
+
+namespace $rootnamespace$.$models$.$safeItemNamePlural$
+{
+    public class $safeItemNameSingular$
+    {
+        $classProperties$
+    }
+}
