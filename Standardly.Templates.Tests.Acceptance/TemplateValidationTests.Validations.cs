@@ -8,6 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using Standardly.Core.Models.Foundations.Templates;
@@ -55,6 +56,56 @@ namespace Standardly.Templates.Tests.Acceptance
             }
 
             Assert.False(errorList.Length > 0, errorList.ToString());
+        }
+
+        [Fact]
+        public void ShouldVerifyThatAllTemplatesOnlyHaveTheStandardReplacementVariables()
+        {
+            InvalidReplacementException invalidReplacementException = new InvalidReplacementException();
+
+            // given
+            List<(dynamic Rule, string Parameter)> validationRules = new List<(dynamic rule, string parameter)>();
+            Dictionary<string, string> replacementsDictionary = GetReplacementDictionaryWithRandomValues();
+            List<Template> templates = this.standardlyTemplateClient.FindAllTemplates();
+
+            // when
+            for (int templateCounter = 0; templateCounter <= templates.Count - 1; templateCounter++)
+            {
+                Template template = templates[templateCounter];
+
+                string rawTransformedTemplate = this.templateService
+                    .TransformString(template.RawTemplate, replacementsDictionary);
+
+                try
+                {
+                    this.templateService.ValidateTransformation(rawTransformedTemplate);
+                }
+                catch (TemplateValidationException templateValidationException)
+                {
+                    var templateName = template.Name ?? templateCounter.ToString();
+                    foreach (DictionaryEntry dictionaryEntry in templateValidationException.InnerException.Data)
+                    {
+                        invalidReplacementException.Data
+                            .Add($"Template[{templateName}].{dictionaryEntry.Key}", dictionaryEntry.Value);
+                    }
+                }
+            }
+
+            // then
+            if (invalidReplacementException.Data.Count > 0)
+            {
+                StringBuilder errorMessages = new StringBuilder();
+
+                foreach (DictionaryEntry dictionaryEntry in invalidReplacementException.Data)
+                {
+                    string errors = ((List<string>)dictionaryEntry.Value)
+                           .Select(value => value).Aggregate((t1, t2) => t1 + $"{Environment.NewLine}" + t2);
+
+                    errorMessages.AppendLine($"{dictionaryEntry.Key}");
+                }
+
+                Assert.True(false, errorMessages.ToString());
+            }
         }
     }
 }
