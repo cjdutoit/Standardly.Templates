@@ -14,22 +14,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Templates\CSharp\Api\Data\CustomModel\001_IStorageBroker.cs.txt">
+    <None Include="Templates\CSharp\Api\Data\CustomModel\001_IStorageBroker.cs.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\CSharp\Api\Data\CustomModel\001_IStorageBroker.Items.cs.txt">
+    <None Include="Templates\CSharp\Api\Data\CustomModel\001_IStorageBroker.Items.cs.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\CSharp\Api\Data\CustomModel\001_Item.cs.txt">
+    <None Include="Templates\CSharp\Api\Data\CustomModel\001_Item.cs.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\CSharp\Api\Data\CustomModel\001_StorageBroker.cs.txt">
+    <None Include="Templates\CSharp\Api\Data\CustomModel\001_StorageBroker.cs.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\CSharp\Api\Data\CustomModel\001_StorageBroker.Items.cs.txt">
+    <None Include="Templates\CSharp\Api\Data\CustomModel\001_StorageBroker.Items.cs.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\CSharp\Api\Data\CustomModel\Template.json">
+    <None Include="Templates\CSharp\Api\Data\CustomModel\Template.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

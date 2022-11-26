@@ -37,27 +37,27 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\$language$\\Api\\Data\\CustomModel\\001_Item.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Api\\Data\\CustomModel\\001_Item.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\$safeItemNameSingular$.cs",
               "replace": false
             },
             {
-              "template": "$templateFolder$\\$language$\\Api\\Data\\CustomModel\\001_IStorageBroker.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Api\\Data\\CustomModel\\001_IStorageBroker.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\IStorageBroker.cs",
               "replace": false
             },
             {
-              "template": "$templateFolder$\\$language$\\Api\\Data\\CustomModel\\001_IStorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Api\\Data\\CustomModel\\001_IStorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\IStorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\$language$\\Api\\Data\\CustomModel\\001_StorageBroker.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Api\\Data\\CustomModel\\001_StorageBroker.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.cs",
               "replace": false
             },
             {
-              "template": "$templateFolder$\\$language$\\Api\\Data\\CustomModel\\001_StorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Api\\Data\\CustomModel\\001_StorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             }

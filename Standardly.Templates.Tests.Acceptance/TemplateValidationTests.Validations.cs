@@ -13,6 +13,7 @@ using System.Reflection;
 using System.Text;
 using Standardly.Core.Models.Foundations.Templates;
 using Standardly.Core.Models.Foundations.Templates.Exceptions;
+using Standardly.Core.Models.Processings.Templates.Exceptions;
 using Xunit;
 
 namespace Standardly.Templates.Tests.Acceptance
@@ -37,7 +38,7 @@ namespace Standardly.Templates.Tests.Acceptance
                 try
                 {
                     string rawTemplate = this.fileService.ReadFromFile(fileList[fileCounter]);
-                    Template template = this.templateService.ConvertStringToTemplate(rawTemplate);
+                    Template template = this.templateProcessingService.ConvertStringToTemplate(rawTemplate);
                 }
                 catch (TemplateValidationException ex)
                 {
@@ -59,44 +60,55 @@ namespace Standardly.Templates.Tests.Acceptance
         }
 
         [Fact]
-        public void ShouldVerifyThatAllTemplatesOnlyHaveTheStandardReplacementVariables()
+        public void ShouldVerifyThatAllVariableHasBeenReplacedAndTemplatesSavedInActualOutputFolder()
         {
-            InvalidReplacementException invalidReplacementException = new InvalidReplacementException();
-
             // given
-            List<(dynamic Rule, string Parameter)> validationRules = new List<(dynamic rule, string parameter)>();
-            Dictionary<string, string> replacementsDictionary = GetReplacementDictionaryWithRandomValues();
+            InvalidReplacementTemplateException invalidReplacementTemplateException =
+                new InvalidReplacementTemplateException();
+
+            Dictionary<string, string> replacementDictionary = GetReplacementDictionary();
             List<Template> templates = this.standardlyTemplateClient.FindAllTemplates();
 
             // when
             for (int templateCounter = 0; templateCounter <= templates.Count - 1; templateCounter++)
             {
                 Template template = templates[templateCounter];
-
-                string rawTransformedTemplate = this.templateService
-                    .TransformString(template.RawTemplate, replacementsDictionary);
-
                 try
                 {
-                    this.templateService.ValidateTransformation(rawTransformedTemplate);
+                    for (int taskIndex = 0; taskIndex <= template.Tasks.Count - 1; taskIndex++)
+                    {
+                        var transformedTemplate =
+                            this.templateProcessingService
+                                .TransformTemplate(template, replacementDictionary);
+
+                        transformedTemplate.Tasks[taskIndex].Actions.ForEach(action =>
+                        {
+                            this.PerformFileCreations(action.Files, replacementDictionary);
+                            this.PerformAppendOpperations(action.Appends, replacementDictionary);
+                        });
+                    }
                 }
-                catch (TemplateValidationException templateValidationException)
+                catch (TemplateProcessingDependencyValidationException templateProcessingDependencyValidationException)
                 {
                     var templateName = template.Name ?? templateCounter.ToString();
-                    foreach (DictionaryEntry dictionaryEntry in templateValidationException.InnerException.Data)
+
+                    foreach (DictionaryEntry dictionaryEntry in
+                        templateProcessingDependencyValidationException.InnerException.Data)
                     {
-                        invalidReplacementException.Data
+                        invalidReplacementTemplateException.Data
                             .Add($"Template[{templateName}].{dictionaryEntry.Key}", dictionaryEntry.Value);
                     }
                 }
             }
 
             // then
-            if (invalidReplacementException.Data.Count > 0)
+            if (invalidReplacementTemplateException.Data.Count > 0)
             {
                 StringBuilder errorMessages = new StringBuilder();
+                errorMessages.AppendLine("Found the following unexpected tags:" + Environment.NewLine);
 
-                foreach (DictionaryEntry dictionaryEntry in invalidReplacementException.Data)
+
+                foreach (DictionaryEntry dictionaryEntry in invalidReplacementTemplateException.Data)
                 {
                     string errors = ((List<string>)dictionaryEntry.Value)
                            .Select(value => value).Aggregate((t1, t2) => t1 + $"{Environment.NewLine}" + t2);
@@ -104,7 +116,7 @@ namespace Standardly.Templates.Tests.Acceptance
                     errorMessages.AppendLine($"{dictionaryEntry.Key}");
                 }
 
-                Assert.True(false, errorMessages.ToString());
+                Assert.Fail(errorMessages.ToString());
             }
         }
     }
