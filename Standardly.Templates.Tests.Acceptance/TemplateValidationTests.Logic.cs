@@ -5,7 +5,11 @@
 // ---------------------------------------------------------------
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Standardly.Core.Models.Clients.Exceptions;
 using Standardly.Core.Models.Foundations.Templates;
 using Standardly.Core.Models.Foundations.Templates.Exceptions;
 using Standardly.Core.Models.Orchestrations;
@@ -16,7 +20,7 @@ namespace Standardly.Templates.Tests.Acceptance
     public partial class TemplateValidationTests
     {
         [Fact]
-        public void ShouldVerifyThatAllReplacementVariableHasBeenReplacedInTemplateFiles()
+        public void ShouldGenerateAllTemplates()
         {
             // given
             InvalidReplacementTemplateException invalidReplacementTemplateException =
@@ -36,6 +40,28 @@ namespace Standardly.Templates.Tests.Acceptance
             try
             {
                 this.standardlyGenerationClient.GenerateCode(templateGenerationInfo);
+
+                Assert.True(
+                    true,
+                    $"The templates rendered successfully. "
+                        + $"Please complete some manual validation on the output file located here:  "
+                        + $"{replacementDictionary["$solutionFolder$"]}");
+            }
+            catch (StandardlyClientValidationException validationException)
+            {
+
+                StringBuilder errorMessages = new StringBuilder();
+                errorMessages.AppendLine("Found the following unexpected tags:" + Environment.NewLine);
+
+                foreach (DictionaryEntry dictionaryEntry in validationException.InnerException.Data)
+                {
+                    string errors = ((List<string>)dictionaryEntry.Value)
+                           .Select(value => value).Aggregate((t1, t2) => t1 + $"{Environment.NewLine}" + t2);
+
+                    errorMessages.AppendLine($"{dictionaryEntry.Key}");
+                }
+
+                Assert.Fail(errorMessages.ToString());
             }
             catch (Exception ex)
             {
