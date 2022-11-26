@@ -7,7 +7,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Standardly.Core.Models.Clients.Exceptions;
@@ -29,6 +28,7 @@ namespace Standardly.Templates.Tests.Acceptance
 
             Dictionary<string, string> replacementDictionary = GetReplacementDictionary();
             List<Template> templates = this.standardlyTemplateClient.FindAllTemplates();
+            output.WriteLine($"Templates Found: {templates.Count}");
 
             TemplateGenerationInfo templateGenerationInfo = new TemplateGenerationInfo
             {
@@ -42,8 +42,7 @@ namespace Standardly.Templates.Tests.Acceptance
             {
                 this.standardlyGenerationClient.GenerateCode(templateGenerationInfo);
 
-                Debug.WriteLine(
-                    $"The templates rendered successfully. "
+                output.WriteLine("The templates rendered successfully. "
                         + $"Please complete some manual validation on the output file located here:  "
                         + $"{replacementDictionary["$solutionFolder$"]}");
             }

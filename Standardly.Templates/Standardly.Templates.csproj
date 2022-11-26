@@ -34,4 +34,16 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Templates\CSharp\Api\Brokers\DateTimes\001_DateTimeBroker.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\CSharp\Api\Brokers\DateTimes\001_IDateTimeBroker.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\CSharp\Api\Brokers\DateTimes\Template.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
