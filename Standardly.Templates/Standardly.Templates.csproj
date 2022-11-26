@@ -5,4 +5,33 @@
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Templates\Angular\Frontend\" />
+    <Folder Include="Templates\CSharp\Frontend\" />
+    <Folder Include="Templates\ReactWithTypescript\Frontend\" />
+    <Folder Include="Templates\Python\" />
+    <Folder Include="Templates\Vue\Frontend\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Templates\CSharp\Api\Data\CustomModel\001_IStorageBroker.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\CSharp\Api\Data\CustomModel\001_IStorageBroker.Items.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\CSharp\Api\Data\CustomModel\001_Item.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\CSharp\Api\Data\CustomModel\001_StorageBroker.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\CSharp\Api\Data\CustomModel\001_StorageBroker.Items.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\CSharp\Api\Data\CustomModel\Template.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
