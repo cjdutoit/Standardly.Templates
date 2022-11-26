@@ -16,12 +16,12 @@ using Standardly.Core.Brokers.Loggings;
 using Standardly.Core.Brokers.RegularExpressions;
 using Standardly.Core.Clients;
 using Standardly.Core.Models.Configurations.Retries;
-using Standardly.Core.Models.Foundations.Templates.Tasks.Actions.Appends;
 using Standardly.Core.Services.Foundations.Files;
 using Standardly.Core.Services.Foundations.Templates;
 using Standardly.Core.Services.Processings.Files;
 using Standardly.Core.Services.Processings.Templates;
 using Tynamix.ObjectFiller;
+using Xunit.Abstractions;
 
 namespace Standardly.Templates.Tests.Acceptance
 {
@@ -33,9 +33,11 @@ namespace Standardly.Templates.Tests.Acceptance
         private readonly ITemplateProcessingService templateProcessingService;
         private readonly IStandardlyTemplateClient standardlyTemplateClient;
         private readonly IStandardlyGenerationClient standardlyGenerationClient;
+        private readonly ITestOutputHelper output;
 
-        public TemplateValidationTests()
+        public TemplateValidationTests(ITestOutputHelper output)
         {
+            this.output = output;
             string assembly = Assembly.GetExecutingAssembly().Location;
             string templateFolderPath = Path.Combine(Path.GetDirectoryName(assembly), @"Templates");
             string templateDefinitionFileName = "Template.json";
@@ -44,7 +46,10 @@ namespace Standardly.Templates.Tests.Acceptance
             this.standardlyTemplateClient =
                 new StandardlyTemplateClient(templateFolderPath, templateDefinitionFileName, loggingBroker);
 
-            this.standardlyGenerationClient = new StandardlyGenerationClient(loggingBroker);
+            this.standardlyGenerationClient = new StandardlyGenerationClient(loggingBroker)
+            {
+                ScriptExecutionIsEnabled = false
+            };
 
             this.fileService = new FileService(
                 fileBroker: new FileBroker(),
@@ -103,27 +108,6 @@ namespace Standardly.Templates.Tests.Acceptance
             });
         }
 
-        private void PerformAppendOpperations(
-            List<Append> appends,
-            Dictionary<string, string> replacementDictionary)
-        {
-            foreach (Append append in appends)
-            {
-                string fileContent = this.fileProcessingService.ReadFromFile(append.Target);
-
-                string appendedContent = this.templateProcessingService.AppendContent(
-                    sourceContent: fileContent,
-                    doesNotContainContent: append.DoesNotContainContent,
-                    regexToMatchForAppend: append.RegexToMatchForAppend,
-                    appendContent: append.ContentToAppend,
-                    appendToBeginning: append.AppendToBeginning,
-                    appendEvenIfContentAlreadyExist: append.AppendEvenIfContentAlreadyExist);
-
-                string transformedFileContent =
-                    this.templateProcessingService.TransformString(appendedContent, replacementDictionary);
-            }
-        }
-
         private Dictionary<string, string> GetReplacementDictionary()
         {
             var assembly = Assembly.GetExecutingAssembly().Location;
@@ -140,7 +124,6 @@ namespace Standardly.Templates.Tests.Acceptance
                     gitHubUsername: "TestUser"
                 );
         }
-
 
         private Dictionary<string, string> GetReplacementDictionary(
              string templateFolder,
