@@ -7,6 +7,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Standardly.Core.Models.Clients.Exceptions;
@@ -41,8 +42,7 @@ namespace Standardly.Templates.Tests.Acceptance
             {
                 this.standardlyGenerationClient.GenerateCode(templateGenerationInfo);
 
-                Assert.True(
-                    true,
+                Debug.WriteLine(
                     $"The templates rendered successfully. "
                         + $"Please complete some manual validation on the output file located here:  "
                         + $"{replacementDictionary["$solutionFolder$"]}");
