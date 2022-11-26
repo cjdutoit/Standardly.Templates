@@ -5,10 +5,7 @@
 // ---------------------------------------------------------------
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Standardly.Core.Models.Foundations.Templates;
 using Standardly.Core.Models.Foundations.Templates.Exceptions;
 using Standardly.Core.Models.Orchestrations;
@@ -42,25 +39,7 @@ namespace Standardly.Templates.Tests.Acceptance
             }
             catch (Exception ex)
             {
-                throw;
-            }
-
-            // then
-            if (invalidReplacementTemplateException.Data.Count > 0)
-            {
-                StringBuilder errorMessages = new StringBuilder();
-                errorMessages.AppendLine("Found the following unexpected tags:" + Environment.NewLine);
-
-
-                foreach (DictionaryEntry dictionaryEntry in invalidReplacementTemplateException.Data)
-                {
-                    string errors = ((List<string>)dictionaryEntry.Value)
-                           .Select(value => value).Aggregate((t1, t2) => t1 + $"{Environment.NewLine}" + t2);
-
-                    errorMessages.AppendLine($"{dictionaryEntry.Key}");
-                }
-
-                Assert.Fail(errorMessages.ToString());
+                Assert.Fail(ex.Message);
             }
         }
     }
