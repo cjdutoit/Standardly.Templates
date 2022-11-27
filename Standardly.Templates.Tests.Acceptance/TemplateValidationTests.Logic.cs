@@ -48,7 +48,6 @@ namespace Standardly.Templates.Tests.Acceptance
             }
             catch (StandardlyClientValidationException validationException)
             {
-
                 StringBuilder errorMessages = new StringBuilder();
                 errorMessages.AppendLine("Found the following unexpected tags:" + Environment.NewLine);
 

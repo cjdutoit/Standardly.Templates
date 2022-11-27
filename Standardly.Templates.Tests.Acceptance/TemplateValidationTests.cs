@@ -16,6 +16,7 @@ using Standardly.Core.Brokers.Loggings;
 using Standardly.Core.Brokers.RegularExpressions;
 using Standardly.Core.Clients;
 using Standardly.Core.Models.Configurations.Retries;
+using Standardly.Core.Models.Events;
 using Standardly.Core.Services.Foundations.Files;
 using Standardly.Core.Services.Foundations.Templates;
 using Standardly.Core.Services.Processings.Files;
@@ -48,8 +49,10 @@ namespace Standardly.Templates.Tests.Acceptance
 
             this.standardlyGenerationClient = new StandardlyGenerationClient(loggingBroker)
             {
-                ScriptExecutionIsEnabled = false
+                ScriptExecutionIsEnabled = false,
             };
+
+            this.standardlyGenerationClient.Processed += ItemProcessed;
 
             this.fileService = new FileService(
                 fileBroker: new FileBroker(),
@@ -333,6 +336,12 @@ namespace Standardly.Templates.Tests.Acceptance
                                     .ToArray();
 
             return words;
+        }
+
+        private void ItemProcessed(object sender, ProcessedEventArgs e)
+        {
+            output.WriteLine($"{e.TimeStamp} - {e.Status} - {e.Message}");
+            output.WriteLine($"Processed: {e.ProcessedItems} of {e.TotalItems}");
         }
     }
 }
