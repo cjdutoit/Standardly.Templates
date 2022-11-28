@@ -29,6 +29,9 @@ namespace Standardly.Templates.Tests.Acceptance
             Dictionary<string, string> replacementDictionary = GetReplacementDictionary();
             List<Template> templates = this.standardlyTemplateClient.FindAllTemplates();
             output.WriteLine($"Templates Found: {templates.Count}");
+            output.WriteLine(
+                $"Files for manual validation: {replacementDictionary["$solutionFolder$"].Replace(@"\\", @"\")}"
+                + Environment.NewLine + Environment.NewLine);
 
             TemplateGenerationInfo templateGenerationInfo = new TemplateGenerationInfo
             {
@@ -44,20 +47,24 @@ namespace Standardly.Templates.Tests.Acceptance
 
                 output.WriteLine("The templates rendered successfully. "
                         + $"Please complete some manual validation on the output file located here:  "
-                        + $"{replacementDictionary["$solutionFolder$"]}");
+                        + $"{replacementDictionary["$solutionFolder$"].Replace(@"\\", @"\")}");
             }
             catch (StandardlyClientValidationException validationException)
             {
-
                 StringBuilder errorMessages = new StringBuilder();
-                errorMessages.AppendLine("Found the following unexpected tags:" + Environment.NewLine);
+                errorMessages.AppendLine(validationException.InnerException.Message);
 
-                foreach (DictionaryEntry dictionaryEntry in validationException.InnerException.Data)
+                if (validationException.InnerException.Data.Count > 0)
                 {
-                    string errors = ((List<string>)dictionaryEntry.Value)
-                           .Select(value => value).Aggregate((t1, t2) => t1 + $"{Environment.NewLine}" + t2);
+                    errorMessages.AppendLine("Found the following unexpected tags:" + Environment.NewLine);
 
-                    errorMessages.AppendLine($"{dictionaryEntry.Key}");
+                    foreach (DictionaryEntry dictionaryEntry in validationException.InnerException.Data)
+                    {
+                        string errors = ((List<string>)dictionaryEntry.Value)
+                               .Select(value => value).Aggregate((t1, t2) => t1 + $"{Environment.NewLine}" + t2);
+
+                        errorMessages.AppendLine($"{dictionaryEntry.Key}");
+                    }
                 }
 
                 Assert.Fail(errorMessages.ToString());
