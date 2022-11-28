@@ -150,7 +150,7 @@
             {
               "target": "$projectFolder$\\Startup.cs",
               "doesNotContainContent": "",
-              "regexToMatchForAppend": "(?<=private static void AddServices\\(IServiceCollection services\\)\\r\\n        \\{\\r\\n)([\\S\\s]*?)(?=        \\}\\r\\n)",
+              "regexToMatchForAppend": "(?<=private static void AddFoundations\\(IServiceCollection services\\)\\r\\n        \\{\\r\\n)([\\S\\s]*?)(?=        \\}\\r\\n)",
               "contentToAppend": "            services.AddTransient<I$safeItemNameSingular$Service.cs, $safeItemNameSingular$Service.cs>();\r\n",
               "appendToBeginning": false,
               "appendEvenIfContentAlreadyExist": false
@@ -1758,7 +1758,7 @@
           "executions": [
             {
               "name": "Checkout base branch",
-              "instruction": "git checkout $baseBranch$"
+              "instruction": "git checkout $basebranch$"
             },
             {
               "name": "Fetch the latest code",
