@@ -122,6 +122,24 @@
     <None Update="Templates\CSharp\Api\Brokers\Loggings\Template.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Templates\CSharp\Api\Controllers\001_ItemController.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\CSharp\Api\Controllers\002_ItemController.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\CSharp\Api\Controllers\003_ItemController.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\CSharp\Api\Controllers\004_ItemController.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\CSharp\Api\Controllers\005_ItemController.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\CSharp\Api\Controllers\Template.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Templates\CSharp\Api\Services\Foundations\Service\Add\001_IItemService.cs.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
