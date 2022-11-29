@@ -913,7 +913,7 @@
     },
     {
       "name": "FOUNDATIONS: $safeItemNameSingular$ Service - Retrieve $safeItemNameSingular$ By Id",
-      "branchName": "users/$username$/foundations-$parameterSafeItemNamePluralLower$-retrievebyid",
+      "branchName": "foundations-$parameterSafeItemNamePluralLower$-retrievebyid",
       "actions": [
         {
           "name": "Create branch",

@@ -211,7 +211,7 @@ namespace Standardly.Templates.Tests.Acceptance
             var upperDescriptionName = UpperDescriptionPropertyName(nameSingular);
             var lowerPluralDescriptionName = DescriptionPropertyName(namePlural);
             var upperPluralDescriptionName = UpperDescriptionPropertyName(namePlural);
-            replacementsDictionary.Add("$basebranch$", gitHubBaseBranchName);
+            replacementsDictionary.Add("$baseBranch$", gitHubBaseBranchName);
             replacementsDictionary.Add("$previousBranch$", gitHubBaseBranchName);
             replacementsDictionary.Add("$currentBranch$", gitHubBaseBranchName);
             replacementsDictionary.Add("$rootnamespace$", rootNameSpace);

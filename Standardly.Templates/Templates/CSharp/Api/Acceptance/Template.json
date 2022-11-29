@@ -54,7 +54,7 @@
         {
           "name": "BROKERS: ApiBroker",
           "executionFolder": "$acceptanceTestProjectFolder$",
-          "fileItems": [
+          "files": [
             {
               "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Post\\001_ApiBroker.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\$brokers$\\ApiBroker.cs",
@@ -80,7 +80,7 @@
         {
           "name": "Add $safeItemNameSingular$ Model",
           "executionFolder": "$acceptanceTestProjectFolder$",
-          "fileItems": [
+          "files": [
             {
               "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Post\\002_Item.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\$models$\\$safeItemNamePlural$\\$safeItemNameSingular$.cs",
@@ -101,7 +101,7 @@
         {
           "name": "ACCEPTANCE: Should POST $safeItemNameSingular$",
           "executionFolder": "$acceptanceTestProjectFolder$",
-          "fileItems": [
+          "files": [
             {
               "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Post\\003_ApiBroker.Items.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\$brokers$\\ApiBroker.$safeItemNamePlural$.cs",
@@ -168,7 +168,7 @@
         {
           "name": "ACCEPTANCE: Should GET ALL $safeItemNamePlural$",
           "executionFolder": "$acceptanceTestProjectFolder$",
-          "fileItems": [
+          "files": [
             {
               "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\GetAll\\001_ItemsApiTests.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.cs",
@@ -215,7 +215,7 @@
     },
     {
       "name": "003 - ACCEPTANCE: Should GET $safeItemNameSingular$ By Id",
-      "branchName": "users/$username$/acceptance-$parameterSafeItemNamePluralLower$-getbyid",
+      "branchName": "acceptance-$parameterSafeItemNamePluralLower$-getbyid",
       "actions": [
         {
           "name": "Create branch for the GET ALL Acceptance Tests",
@@ -230,7 +230,7 @@
         {
           "name": "ACCEPTANCE: Should GET $safeItemNameSingular$ By Id",
           "executionFolder": "$acceptanceTestProjectFolder$",
-          "fileItems": [
+          "files": [
             {
               "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\GetById\\001_ItemsApiTests.Logic.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.Logic.cs",
@@ -287,7 +287,7 @@
         {
           "name": "ACCEPTANCE: Should PUT $safeItemNameSingular$",
           "executionFolder": "$acceptanceTestProjectFolder$",
-          "fileItems": [
+          "files": [
             {
               "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Put\\001_ItemsApiTests.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.cs",
@@ -349,7 +349,7 @@
         {
           "name": "ACCEPTANCE: Should DELETE $safeItemNameSingular$",
           "executionFolder": "$acceptanceTestProjectFolder$",
-          "fileItems": [
+          "files": [
             {
               "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Delete\\001_ItemsApiTests.Logic.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.Logic.cs",

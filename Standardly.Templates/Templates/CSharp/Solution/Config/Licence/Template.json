@@ -1,0 +1,82 @@
+{
+  "name": "CONFIG: License file",
+  "description": "Adds a license file to the project if they are not already present.",
+  "templateType": "Config",
+  "projectsRequired": "Solution",
+  "sortOrder": 100,
+  "modelSingularName": "N/A ",
+  "modelPluralName": "N/A",
+  "tasks": [
+    {
+      "name": "CONFIG: Add license file to solution",
+      "branchName": "config-solution-license",
+      "actions": [
+        {
+          "name": "Create branch",
+          "executionFolder": "$projectFolder$",
+          "executions": [
+            {
+              "name": "Checkout base branch",
+              "instruction": "git checkout $previousBranch$"
+            },
+            {
+              "name": "Fetch the latest code",
+              "instruction": "git fetch origin"
+            },
+            {
+              "name": "Create new branch",
+              "instruction": "git checkout -b users/$username$/$currentBranch$ users/$username$/$previousBranch$"
+            }
+          ]
+        },
+        {
+          "name": "CONFIG: Add license file to solution",
+          "executionFolder": "$projectFolder$",
+          "files": [
+            {
+              "template": "$templateFolder$\\CSharp\\Solution\\Config\\Licence\\001_License.txt.txt",
+              "target": "$solutionFolder$\\License.txt",
+              "replace": false
+            }
+          ],
+          "executions": [
+            {
+              "name": "Stage all changes",
+              "instruction": "git add -A"
+            },
+            {
+              "name": "Commit staged changes",
+              "instruction": "git commit -m \"CONFIG: Add license file to solution\""
+            }
+          ]
+        },
+        {
+          "name": "Push branch",
+          "executionFolder": "$projectFolder$",
+          "executions": [
+            {
+              "name": "Push changes to <remote>",
+              "instruction": "git push origin users/$username$/$currentBranch$"
+            }
+          ]
+        },
+        {
+          "name": "Create Pull Request",
+          "executionFolder": "$projectFolder$",
+          "executions": [
+            {
+              "name": "Create Pull Request",
+              "instruction": "gh pr create $draftPullRequest$ -t \"CONFIG: Add license file to solution\" -b \" \""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cleanupTasks": [
+    "----------------------------------------------------",
+    "CONFIG: Configuration",
+    "----------------------------------------------------",
+    "* Review Draft Pull Requests (and add more commits by pushing to any of the branches if needed):"
+  ]
+}
