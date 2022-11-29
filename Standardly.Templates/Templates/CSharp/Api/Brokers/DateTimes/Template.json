@@ -17,11 +17,11 @@
           "executions": [
             {
               "name": "Checkout base branch",
-              "instruction": "git checkout $basebranch$"
+              "instruction": "git checkout $previousBranch$"
             },
             {
               "name": "Fetch the latest code",
-              "instruction": "git pull origin"
+              "instruction": "git fetch origin"
             },
             {
               "name": "Create new branch",

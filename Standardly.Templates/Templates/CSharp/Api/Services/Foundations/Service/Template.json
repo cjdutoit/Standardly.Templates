@@ -12,15 +12,14 @@
         {
           "name": "Create branch",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Checkout base branch",
-              "instruction": "git checkout $basebranch$"
+              "instruction": "git checkout $previousBranch$"
             },
             {
               "name": "Fetch the latest code",
-              "instruction": "git pull origin"
+              "instruction": "git fetch origin"
             },
             {
               "name": "Create new branch",
@@ -711,7 +710,6 @@
         {
           "name": "Push branch",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Push changes to <remote>",
@@ -722,7 +720,6 @@
         {
           "name": "Create Pull Request",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Create Pull Request",
@@ -739,7 +736,6 @@
         {
           "name": "Create branch",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Create new branch",
@@ -896,7 +892,6 @@
         {
           "name": "Push branch",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Push changes to <remote>",
@@ -907,7 +902,6 @@
         {
           "name": "Create Pull Request",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Create Pull Request",
@@ -924,7 +918,6 @@
         {
           "name": "Create branch",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Create new branch",
@@ -1133,7 +1126,6 @@
         {
           "name": "Push branch",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Push changes to <remote>",
@@ -1144,7 +1136,6 @@
         {
           "name": "Create Pull Request",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Create Pull Request",
@@ -1161,7 +1152,6 @@
         {
           "name": "Create branch",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Create new branch",
@@ -1726,7 +1716,6 @@
         {
           "name": "Push branch",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Push changes to <remote>",
@@ -1737,7 +1726,6 @@
         {
           "name": "Create Pull Request",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Create Pull Request",
@@ -1754,16 +1742,7 @@
         {
           "name": "Create branch",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
-            {
-              "name": "Checkout base branch",
-              "instruction": "git checkout $basebranch$"
-            },
-            {
-              "name": "Fetch the latest code",
-              "instruction": "git pull origin"
-            },
             {
               "name": "Create new branch",
               "instruction": "git checkout -b users/$username$/$currentBranch$ users/$username$/$previousBranch$"
@@ -1993,7 +1972,6 @@
         {
           "name": "Push branch",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Push changes to <remote>",
@@ -2004,7 +1982,6 @@
         {
           "name": "Create Pull Request",
           "executionFolder": "$projectFolder$",
-          "primaryAction": false,
           "executions": [
             {
               "name": "Create Pull Request",
