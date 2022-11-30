@@ -1,0 +1,82 @@
+{
+  "name": "CONFIG: Add .gitignore",
+  "description": "Adds a .gitignore file to the solution if not already present.",
+  "templateType": "Config",
+  "projectsRequired": "Solution",
+  "sortOrder": 100,
+  "modelSingularName": "N/A ",
+  "modelPluralName": "N/A",
+  "tasks": [
+    {
+      "name": "CONFIG: Add .gitignore to solution",
+      "branchName": "config-solution-gitignore",
+      "actions": [
+        {
+          "name": "Create branch",
+          "executionFolder": "$projectFolder$",
+          "executions": [
+            {
+              "name": "Checkout base branch",
+              "instruction": "git checkout $previousBranch$"
+            },
+            {
+              "name": "Fetch the latest code",
+              "instruction": "git fetch origin"
+            },
+            {
+              "name": "Create new branch",
+              "instruction": "git checkout -b users/$username$/$currentBranch$ users/$username$/$previousBranch$"
+            }
+          ]
+        },
+        {
+          "name": "CONFIG: Add .gitignore to solution",
+          "executionFolder": "$projectFolder$",
+          "files": [
+            {
+              "template": "$templateFolder$\\CSharp\\Solution\\Config\\GitIgnore\\001_.gitignore.txt",
+              "target": "$solutionFolder$\\.gitignore",
+              "replace": false
+            }
+          ],
+          "executions": [
+            {
+              "name": "Stage all changes",
+              "instruction": "git add  -A"
+            },
+            {
+              "name": "Commit staged changes",
+              "instruction": "git commit -m \"CONFIG: Add .gitignore to solution\""
+            }
+          ]
+        },
+        {
+          "name": "Push branch",
+          "executionFolder": "$projectFolder$",
+          "executions": [
+            {
+              "name": "Push changes to <remote>",
+              "instruction": "git push origin users/$username$/$currentBranch$"
+            }
+          ]
+        },
+        {
+          "name": "Create Pull Request",
+          "executionFolder": "$projectFolder$",
+          "executions": [
+            {
+              "name": "Create Pull Request",
+              "instruction": "gh pr create $draftPullRequest$ -t \"CONFIG: Add .gitignore to solution\" -b \" \""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cleanupTasks": [
+    "----------------------------------------------------",
+    "CONFIG: Add .gitignore to solution",
+    "----------------------------------------------------",
+    "* Review Draft Pull Requests (and add more commits by pushing to any of the branches if needed):"
+  ]
+}

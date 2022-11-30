@@ -186,7 +186,7 @@
             },
             {
               "name": "Push changes to <remote>",
-              "instruction": "git push origin %%taskBranch%%"
+              "instruction": "git push origin users/$username$/$currentBranch$"
             }
           ]
         },
