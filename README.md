@@ -9,4 +9,4 @@ Standardly.Templates is a .Net library designed to provide templates that .Net d
 
 This library offers a structure in which new template can be added as well as a testing framework.
 
-The structure caters for ANY coding language and my hope is that the community can come tegether on this project to help build templates that can ease / speed up repetetive tasks.
+The structure caters for ANY coding language and my hope is that the community can come together on this project to help build templates that can ease / speed up repetetive tasks.
