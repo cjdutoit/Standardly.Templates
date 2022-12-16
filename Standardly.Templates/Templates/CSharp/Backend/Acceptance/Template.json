@@ -1,7 +1,9 @@
 {
   "name": "ACCEPTANCE: Acceptance Tests",
   "description": "Generates acceptance tests for POST, GET, PUT and DELETE requests",
-  "templateType": "API",
+  "stack": "Backend",
+  "language": "C#",
+  "templateType": "ACCEPTANCE",
   "projectsRequired": "Api",
   "sortOrder": 6,
   "tasks": [
@@ -56,12 +58,12 @@
           "executionFolder": "$acceptanceTestProjectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Post\\001_ApiBroker.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\Post\\001_ApiBroker.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\$brokers$\\ApiBroker.cs",
               "replace": false
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Post\\001_ApiTestCollection.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\Post\\001_ApiTestCollection.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\$brokers$\\ApiTestCollection.cs",
               "replace": false
             }
@@ -82,7 +84,7 @@
           "executionFolder": "$acceptanceTestProjectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Post\\002_Item.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\Post\\002_Item.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\$models$\\$safeItemNamePlural$\\$safeItemNameSingular$.cs",
               "replace": false
             }
@@ -103,17 +105,17 @@
           "executionFolder": "$acceptanceTestProjectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Post\\003_ApiBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\Post\\003_ApiBroker.Items.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\$brokers$\\ApiBroker.$safeItemNamePlural$.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Post\\003_ItemsApiTests.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\Post\\003_ItemsApiTests.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Post\\003_ItemsApiTests.Logic.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\Post\\003_ItemsApiTests.Logic.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.Logic.cs",
               "replace": true
             }
@@ -170,12 +172,12 @@
           "executionFolder": "$acceptanceTestProjectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\GetAll\\001_ItemsApiTests.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\GetAll\\001_ItemsApiTests.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\GetAll\\001_ItemsApiTests.Logic.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\GetAll\\001_ItemsApiTests.Logic.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.Logic.cs",
               "replace": true
             }
@@ -232,7 +234,7 @@
           "executionFolder": "$acceptanceTestProjectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\GetById\\001_ItemsApiTests.Logic.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\GetById\\001_ItemsApiTests.Logic.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.Logic.cs",
               "replace": true
             }
@@ -289,12 +291,12 @@
           "executionFolder": "$acceptanceTestProjectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Put\\001_ItemsApiTests.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\Put\\001_ItemsApiTests.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Put\\001_ItemsApiTests.Logic.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\Put\\001_ItemsApiTests.Logic.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.Logic.cs",
               "replace": true
             }
@@ -351,7 +353,7 @@
           "executionFolder": "$acceptanceTestProjectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Acceptance\\Delete\\001_ItemsApiTests.Logic.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Acceptance\\Delete\\001_ItemsApiTests.Logic.cs.txt",
               "target": "$acceptanceTestProjectFolder$\\Apis\\$safeItemNamePlural$ApiTests.Logic.cs",
               "replace": true
             }

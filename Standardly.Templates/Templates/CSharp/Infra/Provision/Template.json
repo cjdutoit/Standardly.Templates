@@ -1,6 +1,8 @@
 {
   "name": "PROVISION: Azure Resources Provisioning",
   "description": "Provision Azure Resources",
+  "stack": "Solution",
+  "language": "C#",
   "templateType": "PROVISION",
   "projectsRequired": "Provision",
   "sortOrder": 10,

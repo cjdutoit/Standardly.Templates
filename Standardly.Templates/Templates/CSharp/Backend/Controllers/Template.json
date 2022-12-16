@@ -1,7 +1,9 @@
 {
   "name": "CONTROLLERS: API Controller",
   "description": "Generates an API Controller for GET, POST, PUT, DELETE operations",
-  "templateType": "API",
+  "stack": "Backend",
+  "language": "C#",
+  "templateType": "CONTROLLERS",
   "projectsRequired": "Api",
   "sortOrder": 5,
   "tasks": [
@@ -32,7 +34,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Controllers\\001_ItemController.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Controllers\\001_ItemController.cs.txt",
               "target": "$projectFolder$\\$controllers$\\$safeItemNamePlural$Controller.cs",
               "replace": true
             }
@@ -83,7 +85,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Controllers\\002_ItemController.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Controllers\\002_ItemController.cs.txt",
               "target": "$projectFolder$\\$controllers$\\$safeItemNamePlural$Controller.cs",
               "replace": true
             }
@@ -134,7 +136,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Controllers\\003_ItemController.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Controllers\\003_ItemController.cs.txt",
               "target": "$projectFolder$\\$controllers$\\$safeItemNamePlural$Controller.cs",
               "replace": true
             }
@@ -185,7 +187,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Controllers\\004_ItemController.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Controllers\\004_ItemController.cs.txt",
               "target": "$projectFolder$\\$controllers$\\$safeItemNamePlural$Controller.cs",
               "replace": true
             }
@@ -236,7 +238,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Controllers\\005_ItemController.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Controllers\\005_ItemController.cs.txt",
               "target": "$projectFolder$\\$controllers$\\$safeItemNamePlural$Controller.cs",
               "replace": true
             }
