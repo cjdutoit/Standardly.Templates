@@ -25,6 +25,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
     <PackageReference Include="Moq" Version="4.18.3" />
+    <PackageReference Include="Standardly.Commands" Version="1.0.1" />
+    <PackageReference Include="Standardly.Core" Version="1.0.7" />
     <PackageReference Include="Tynamix.ObjectFiller" Version="1.5.8" />
     <PackageReference Include="Xeption" Version="2.5.0" />
     <PackageReference Include="xunit" Version="2.4.2" />
@@ -39,8 +41,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Standardly.Commands\Standardly.Commands\Standardly.Commands.csproj" />
-    <ProjectReference Include="..\..\Standardly.Core\Standardly.Core\Standardly.Core.csproj" />
     <ProjectReference Include="..\Standardly.Templates\Standardly.Templates.csproj" />
   </ItemGroup>
 
