@@ -1,7 +1,9 @@
 {
   "name": "BROKERS: Storage Broker",
   "description": "Generates a Storage Broker with all CRUD operations",
-  "templateType": "API",
+  "stack": "Backend",
+  "language": "C#",
+  "templateType": "BROKERS",
   "projectsRequired": "Api",
   "sortOrder": 1,
   "tasks": [
@@ -36,12 +38,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\001_IStorageBroker.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\001_IStorageBroker.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\IStorageBroker.cs",
               "replace": false
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\001_StorageBroker.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\001_StorageBroker.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.cs",
               "replace": false
             }
@@ -220,7 +222,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\002_Item.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\002_Item.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\$safeItemNameSingular$.cs",
               "replace": false
             }
@@ -277,22 +279,22 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\003_IStorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\003_IStorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\IStorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\003_StorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\003_StorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\003_StorageBroker.Items.Configurations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\003_StorageBroker.Items.Configurations.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.$safeItemNamePlural$.Configurations.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\003_StorageBroker.Items.SeedData.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\003_StorageBroker.Items.SeedData.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.$safeItemNamePlural$.SeedData.cs",
               "replace": true
             }
@@ -357,12 +359,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\004_IStorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\004_IStorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\IStorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\004_StorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\004_StorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             }
@@ -419,12 +421,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\005_IStorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\005_IStorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\IStorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\005_StorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\005_StorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             }
@@ -481,12 +483,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\006_IStorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\006_IStorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\IStorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\006_StorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\006_StorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             }
@@ -543,12 +545,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\007_IStorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\007_IStorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\IStorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Brokers\\Storages\\StorageBroker\\007_StorageBroker.Items.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Brokers\\Storages\\SqlStorageBroker\\007_StorageBroker.Items.cs.txt",
               "target": "$projectFolder$\\$brokers$\\Storages\\StorageBroker.$safeItemNamePlural$.cs",
               "replace": true
             }

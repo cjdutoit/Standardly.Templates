@@ -7,7 +7,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using Standardly.Core.Models.Clients.Exceptions;
 using Standardly.Core.Models.Foundations.Templates;
@@ -23,11 +25,15 @@ namespace Standardly.Templates.Tests.Acceptance
         public void ShouldGenerateAllTemplates()
         {
             // given
+            string assembly = Assembly.GetExecutingAssembly().Location;
+            string templateFolderPath = Path.Combine(Path.GetDirectoryName(assembly), @"Templates");
+            string templateDefinitionFileName = "Template.json";
+
             InvalidReplacementTemplateException invalidReplacementTemplateException =
                 new InvalidReplacementTemplateException();
 
             Dictionary<string, string> replacementDictionary = GetReplacementDictionary();
-            List<Template> templates = this.standardlyTemplateClient.FindAllTemplates();
+            List<Template> templates = this.standardlyTemplateClient.FindAllTemplates(templateFolderPath, templateDefinitionFileName);
             output.WriteLine($"Templates Found: {templates.Count}");
             output.WriteLine(
                 $"Files for manual validation: {replacementDictionary["$solutionFolder$"].Replace(@"\\", @"\")}"
@@ -38,6 +44,7 @@ namespace Standardly.Templates.Tests.Acceptance
                 Templates = templates,
                 ReplacementDictionary = replacementDictionary,
                 EntityModelDefinition = new List<Core.Models.Foundations.Templates.EntityModels.EntityModel>(),
+                ScriptExecutionIsEnabled = false
             };
 
             // when
