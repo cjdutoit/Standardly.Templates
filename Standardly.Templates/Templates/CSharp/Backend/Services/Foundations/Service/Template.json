@@ -1,7 +1,9 @@
 {
   "name": "FOUNDATIONS: Service",
   "description": "Generates a service",
-  "templateType": "API",
+  "stack": "Backend",
+  "language": "C#",
+  "templateType": "FOUNDATIONS",
   "projectsRequired": "Api,Unit",
   "sortOrder": 2,
   "tasks": [
@@ -60,22 +62,22 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\001_ItemServiceTests.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\001_ItemServiceTests.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\001_ItemServiceTests.Logic.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\001_ItemServiceTests.Logic.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Logic.Add.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\001_IItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\001_IItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\I$safeItemNameSingular$Service.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\001_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\001_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -171,7 +173,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\002_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\002_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -192,22 +194,22 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\003_ItemServiceTests.Validations.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\003_ItemServiceTests.Validations.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Add.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\003_ItemServiceTests.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\003_ItemServiceTests.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\003_NullItemException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\003_NullItemException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\Null$safeItemNameSingular$Exception.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\003_ItemValidationException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\003_ItemValidationException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\$safeItemNameSingular$ValidationException.cs",
               "replace": true
             }
@@ -228,17 +230,17 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\004_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\004_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\004_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\004_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\004_ItemService.Exceptions.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\004_ItemService.Exceptions.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Exceptions.cs",
               "replace": true
             }
@@ -259,12 +261,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\005_ItemServiceTests.Validations.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\005_ItemServiceTests.Validations.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Add.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\005_InvalidItemException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\005_InvalidItemException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\Invalid$safeItemNameSingular$Exception.cs",
               "replace": true
             }
@@ -285,12 +287,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\006_ItemService.Exceptions.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\006_ItemService.Exceptions.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Exceptions.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\006_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\006_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             }
@@ -311,12 +313,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\007_ItemServiceTests.Validations.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\007_ItemServiceTests.Validations.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Add.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\007_ItemServiceTests.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\007_ItemServiceTests.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.cs",
               "replace": true
             }
@@ -337,7 +339,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\008_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\008_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             }
@@ -358,7 +360,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\009_ItemServiceTests.Validations.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\009_ItemServiceTests.Validations.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Add.cs",
               "replace": true
             }
@@ -379,7 +381,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\010_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\010_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             }
@@ -400,12 +402,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\011_ItemServiceTests.Validations.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\011_ItemServiceTests.Validations.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Add.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\011_ItemServiceTests.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\011_ItemServiceTests.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.cs",
               "replace": true
             }
@@ -426,17 +428,17 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\012_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\012_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\012_ItemServiceTests.Validations.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\012_ItemServiceTests.Validations.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Add.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\012_ItemServiceTests.Logic.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\012_ItemServiceTests.Logic.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Logic.Add.cs",
               "replace": true
             }
@@ -457,22 +459,22 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\013_ItemServiceTests.Exceptions.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\013_ItemServiceTests.Exceptions.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.Add.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\013_ItemServiceTests.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\013_ItemServiceTests.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\013_FailedItemStorageException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\013_FailedItemStorageException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\Failed$safeItemNameSingular$StorageException.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\013_ItemDependencyException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\013_ItemDependencyException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\$safeItemNameSingular$DependencyException.cs",
               "replace": true
             }
@@ -493,7 +495,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\014_ItemService.Exceptions.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\014_ItemService.Exceptions.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Exceptions.cs",
               "replace": true
             }
@@ -514,22 +516,22 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\015_ItemServiceTests.Exceptions.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\015_ItemServiceTests.Exceptions.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.Add.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\015_ItemServiceTests.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\015_ItemServiceTests.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\015_AlreadyExistsItemException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\015_AlreadyExistsItemException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\AlreadyExists$safeItemNameSingular$Exception.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\015_ItemDependencyValidationException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\015_ItemDependencyValidationException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\$safeItemNameSingular$DependencyValidationException.cs",
               "replace": true
             }
@@ -550,7 +552,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\016_ItemService.Exceptions.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\016_ItemService.Exceptions.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Exceptions.cs",
               "replace": true
             }
@@ -571,12 +573,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\017_ItemServiceTests.Exceptions.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\017_ItemServiceTests.Exceptions.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.Add.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\017_InvalidItemReferenceException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\017_InvalidItemReferenceException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\Invalid$safeItemNameSingular$ReferenceException.cs",
               "replace": true
             }
@@ -597,7 +599,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\018_ItemService.Exceptions.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\018_ItemService.Exceptions.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Exceptions.cs",
               "replace": true
             }
@@ -618,7 +620,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\019_ItemServiceTests.Exceptions.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\019_ItemServiceTests.Exceptions.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.Add.cs",
               "replace": true
             }
@@ -639,7 +641,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\020_ItemService.Exceptions.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\020_ItemService.Exceptions.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Exceptions.cs",
               "replace": true
             }
@@ -660,17 +662,17 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\021_ItemServiceTests.Exceptions.Add.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\021_ItemServiceTests.Exceptions.Add.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.Add.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\021_FailedItemServiceException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\021_FailedItemServiceException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\Failed$safeItemNameSingular$ServiceException.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\021_ItemServiceException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\021_ItemServiceException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\$safeItemNameSingular$ServiceException.cs",
               "replace": true
             }
@@ -691,7 +693,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Add\\022_ItemService.Exceptions.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Add\\022_ItemService.Exceptions.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Exceptions.cs",
               "replace": true
             }
@@ -748,22 +750,22 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveAll\\001_ItemServiceTests.Logic.RetrieveAll.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveAll\\001_ItemServiceTests.Logic.RetrieveAll.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Logic.RetrieveAll.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveAll\\001_ItemServiceTests.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveAll\\001_ItemServiceTests.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveAll\\001_IItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveAll\\001_IItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\I$safeItemNameSingular$Service.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveAll\\001_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveAll\\001_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -784,7 +786,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveAll\\002_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveAll\\002_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -805,7 +807,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveAll\\003_ItemServiceTests.Exceptions.RetrieveAll.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveAll\\003_ItemServiceTests.Exceptions.RetrieveAll.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.RetrieveAll.cs",
               "replace": true
             }
@@ -826,12 +828,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveAll\\004_ItemService.Exceptions.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveAll\\004_ItemService.Exceptions.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Exceptions.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveAll\\004_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveAll\\004_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -852,7 +854,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveAll\\005_ItemServiceTests.Exceptions.RetrieveAll.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveAll\\005_ItemServiceTests.Exceptions.RetrieveAll.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.RetrieveAll.cs",
               "replace": true
             }
@@ -873,7 +875,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveAll\\006_ItemService.Exceptions.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveAll\\006_ItemService.Exceptions.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Exceptions.cs",
               "replace": true
             }
@@ -930,17 +932,17 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\001_ItemServiceTests.Logic.RetrieveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\001_ItemServiceTests.Logic.RetrieveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Logic.RetrieveById.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\001_IItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\001_IItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\I$safeItemNameSingular$Service.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\001_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\001_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -961,7 +963,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\002_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\002_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -982,7 +984,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\003_ItemServiceTests.Validations.RetrieveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\003_ItemServiceTests.Validations.RetrieveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.RetrieveById.cs",
               "replace": true
             }
@@ -1003,12 +1005,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\004_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\004_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\004_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\004_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -1029,12 +1031,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\005_ItemServiceTests.Validations.RetrieveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\005_ItemServiceTests.Validations.RetrieveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.RetrieveById.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\005_NotFoundItemException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\005_NotFoundItemException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\NotFound$safeItemNameSingular$Exception.cs",
               "replace": true
             }
@@ -1055,17 +1057,17 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\006_ItemService.Exceptions.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\006_ItemService.Exceptions.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Exceptions.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\006_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\006_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\006_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\006_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -1086,7 +1088,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\007_ItemServiceTests.Exceptions.RetrieveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\007_ItemServiceTests.Exceptions.RetrieveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.RetrieveById.cs",
               "replace": true
             }
@@ -1107,7 +1109,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RetrieveById\\008_ItemServiceTests.Exceptions.RetrieveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RetrieveById\\008_ItemServiceTests.Exceptions.RetrieveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.RetrieveById.cs",
               "replace": true
             }
@@ -1164,22 +1166,22 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\001_ItemServiceTests.Logic.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\001_ItemServiceTests.Logic.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Logic.Modify.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\001_ItemServiceTests.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\001_ItemServiceTests.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\001_IItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\001_IItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\I$safeItemNameSingular$Service.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\001_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\001_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -1200,7 +1202,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\002_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\002_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -1221,7 +1223,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\003_ItemServiceTests.Validations.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\003_ItemServiceTests.Validations.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Modify.cs",
               "replace": true
             }
@@ -1242,12 +1244,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\004_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\004_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\004_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\004_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -1268,7 +1270,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\005_ItemServiceTests.Validations.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\005_ItemServiceTests.Validations.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Modify.cs",
               "replace": true
             }
@@ -1289,7 +1291,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\006_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\006_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             }
@@ -1310,7 +1312,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\007_ItemServiceTests.Validations.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\007_ItemServiceTests.Validations.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Modify.cs",
               "replace": true
             }
@@ -1331,12 +1333,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\008_ItemServiceTests.Validations.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\008_ItemServiceTests.Validations.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Modify.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\008_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\008_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             }
@@ -1357,7 +1359,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\009_ItemServiceTests.Validations.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\009_ItemServiceTests.Validations.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Modify.cs",
               "replace": true
             }
@@ -1378,17 +1380,17 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\010_ItemServiceTests.Logic.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\010_ItemServiceTests.Logic.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Logic.Modify.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\010_ItemServiceTests.Validations.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\010_ItemServiceTests.Validations.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Modify.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\010_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\010_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             }
@@ -1409,7 +1411,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\011_ItemServiceTests.Validations.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\011_ItemServiceTests.Validations.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Modify.cs",
               "replace": true
             }
@@ -1430,12 +1432,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\012_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\012_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\012_ItemServiceTests.Logic.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\012_ItemServiceTests.Logic.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Logic.Modify.cs",
               "replace": true
             }
@@ -1456,7 +1458,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\013_ItemServiceTests.Validations.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\013_ItemServiceTests.Validations.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Modify.cs",
               "replace": true
             }
@@ -1477,12 +1479,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\014_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\014_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\014_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\014_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -1503,7 +1505,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\015_ItemServiceTests.Validations.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\015_ItemServiceTests.Validations.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Modify.cs",
               "replace": true
             }
@@ -1524,7 +1526,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\016_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\016_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             }
@@ -1545,7 +1547,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\017_ItemServiceTests.Validations.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\017_ItemServiceTests.Validations.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.Modify.cs",
               "replace": true
             }
@@ -1566,7 +1568,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\018_ItemService.Validations.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\018_ItemService.Validations.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Validations.cs",
               "replace": true
             }
@@ -1587,7 +1589,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\019_ItemServiceTests.Exceptions.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\019_ItemServiceTests.Exceptions.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.Modify.cs",
               "replace": true
             }
@@ -1608,7 +1610,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\020_ItemServiceTests.Exceptions.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\020_ItemServiceTests.Exceptions.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.Modify.cs",
               "replace": true
             }
@@ -1629,7 +1631,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\021_ItemServiceTests.Exceptions.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\021_ItemServiceTests.Exceptions.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.Modify.cs",
               "replace": true
             }
@@ -1650,12 +1652,12 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\022_ItemServiceTests.Exceptions.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\022_ItemServiceTests.Exceptions.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.Modify.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\022_LockedItemException.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\022_LockedItemException.cs.txt",
               "target": "$projectFolder$\\$models$\\$safeItemNamePlural$\\Exceptions\\Locked$safeItemNameSingular$Exception.cs",
               "replace": true
             }
@@ -1676,7 +1678,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\023_ItemService.Exceptions.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\023_ItemService.Exceptions.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.Exceptions.cs",
               "replace": true
             }
@@ -1697,7 +1699,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\Modify\\024_ItemServiceTests.Exceptions.Modify.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\Modify\\024_ItemServiceTests.Exceptions.Modify.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.Modify.cs",
               "replace": true
             }
@@ -1754,17 +1756,17 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\001_ItemServiceTests.Logic.RemoveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\001_ItemServiceTests.Logic.RemoveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Logic.RemoveById.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\001_IItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\001_IItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\I$safeItemNameSingular$Service.cs",
               "replace": true
             },
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\001_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\001_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -1785,7 +1787,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\002_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\002_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -1806,7 +1808,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\003_ItemServiceTests.Validations.RemoveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\003_ItemServiceTests.Validations.RemoveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.RemoveById.cs",
               "replace": true
             }
@@ -1827,7 +1829,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\004_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\004_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -1848,7 +1850,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\003_ItemServiceTests.Validations.RemoveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\003_ItemServiceTests.Validations.RemoveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Validations.RemoveById.cs",
               "replace": true
             }
@@ -1869,7 +1871,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\006_ItemService.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\006_ItemService.cs.txt",
               "target": "$projectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$Service.cs",
               "replace": true
             }
@@ -1890,7 +1892,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\007_ItemServiceTests.Exceptions.RemoveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\007_ItemServiceTests.Exceptions.RemoveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.RemoveById.cs",
               "replace": true
             }
@@ -1911,7 +1913,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\008_ItemServiceTests.Exceptions.RemoveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\008_ItemServiceTests.Exceptions.RemoveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.RemoveById.cs",
               "replace": true
             }
@@ -1932,7 +1934,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\009_ItemServiceTests.Exceptions.RemoveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\009_ItemServiceTests.Exceptions.RemoveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.RemoveById.cs",
               "replace": true
             }
@@ -1953,7 +1955,7 @@
           "executionFolder": "$projectFolder$",
           "files": [
             {
-              "template": "$templateFolder$\\CSharp\\Api\\Services\\Foundations\\Service\\RemoveById\\010_ItemServiceTests.Exceptions.RemoveById.cs.txt",
+              "template": "$templateFolder$\\CSharp\\Backend\\Services\\Foundations\\Service\\RemoveById\\010_ItemServiceTests.Exceptions.RemoveById.cs.txt",
               "target": "$unitTestProjectFolder$\\$services$\\$foundations$\\$safeItemNamePlural$\\$safeItemNameSingular$ServiceTests.Exceptions.RemoveById.cs",
               "replace": true
             }

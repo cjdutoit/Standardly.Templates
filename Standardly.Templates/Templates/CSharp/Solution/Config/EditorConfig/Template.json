@@ -1,7 +1,9 @@
 {
   "name": "CONFIG: Add .editorconfig",
   "description": "Adds an .editorconfig file to the solution if not already present.",
-  "templateType": "Config",
+  "stack": "Solution",
+  "language": "C#",
+  "templateType": "CONFIG",
   "projectsRequired": "Solution",
   "sortOrder": 100,
   "modelSingularName": "N/A ",

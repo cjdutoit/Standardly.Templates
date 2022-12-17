@@ -1,6 +1,8 @@
 {
   "name": "INFRA: Setup Infrastructure Build Project",
   "description": "Setup Infrastructure Build Project",
+  "stack": "Solution",
+  "language": "C#",
   "templateType": "INFRA",
   "projectsRequired": "Build",
   "sortOrder": 10,
