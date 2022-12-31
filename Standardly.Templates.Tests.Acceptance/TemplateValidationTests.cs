@@ -10,9 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using Microsoft.Extensions.Logging;
 using Standardly.Core.Brokers.Files;
-using Standardly.Core.Brokers.Loggings;
 using Standardly.Core.Brokers.RegularExpressions;
 using Standardly.Core.Clients;
 using Standardly.Core.Models.Configurations.Retries;
@@ -28,7 +26,6 @@ namespace Standardly.Templates.Tests.Acceptance
 {
     public partial class TemplateValidationTests
     {
-        private readonly ILoggingBroker loggingBroker;
         private readonly IFileService fileService;
         private readonly IFileProcessingService fileProcessingService;
         private readonly ITemplateProcessingService templateProcessingService;
@@ -39,49 +36,22 @@ namespace Standardly.Templates.Tests.Acceptance
         public TemplateValidationTests(ITestOutputHelper output)
         {
             this.output = output;
-            string assembly = Assembly.GetExecutingAssembly().Location;
-            string templateFolderPath = Path.Combine(Path.GetDirectoryName(assembly), @"Templates");
-            string templateDefinitionFileName = "Template.json";
-            this.loggingBroker = InitialiseLogger();
-
-            this.standardlyTemplateClient =
-                new StandardlyTemplateClient(templateFolderPath, templateDefinitionFileName, loggingBroker);
-
-            this.standardlyGenerationClient = new StandardlyGenerationClient(loggingBroker)
-            {
-                ScriptExecutionIsEnabled = false,
-            };
-
+            this.standardlyTemplateClient = new StandardlyTemplateClient();
+            this.standardlyGenerationClient = new StandardlyGenerationClient();
             this.standardlyGenerationClient.Processed += ItemProcessed;
 
             this.fileService = new FileService(
                 fileBroker: new FileBroker(),
-                retryConfig: new RetryConfig(),
-                loggingBroker: this.loggingBroker);
+                retryConfig: new RetryConfig());
 
             this.fileProcessingService =
-                new FileProcessingService(this.fileService, this.loggingBroker);
+                new FileProcessingService(this.fileService);
 
             var templateService = new TemplateService(
                 fileBroker: new FileBroker(),
-                regularExpressionBroker: new RegularExpressionBroker(),
-                loggingBroker: this.loggingBroker);
+                regularExpressionBroker: new RegularExpressionBroker());
 
-            this.templateProcessingService = new TemplateProcessingService(templateService, this.loggingBroker);
-        }
-
-        private ILoggingBroker InitialiseLogger()
-        {
-            ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
-            {
-                builder
-                    .AddFilter("Microsoft", LogLevel.Warning)
-                    .AddFilter("System", LogLevel.Warning)
-                    .AddFilter("Standardly", LogLevel.Warning);
-            });
-
-            ILogger<LoggingBroker> logger = loggerFactory.CreateLogger<LoggingBroker>();
-            return new LoggingBroker(logger);
+            this.templateProcessingService = new TemplateProcessingService(templateService);
         }
 
         private static int GetRandomNumber() =>
@@ -211,7 +181,7 @@ namespace Standardly.Templates.Tests.Acceptance
             var upperDescriptionName = UpperDescriptionPropertyName(nameSingular);
             var lowerPluralDescriptionName = DescriptionPropertyName(namePlural);
             var upperPluralDescriptionName = UpperDescriptionPropertyName(namePlural);
-            replacementsDictionary.Add("$basebranch$", gitHubBaseBranchName);
+            replacementsDictionary.Add("$baseBranch$", gitHubBaseBranchName);
             replacementsDictionary.Add("$previousBranch$", gitHubBaseBranchName);
             replacementsDictionary.Add("$currentBranch$", gitHubBaseBranchName);
             replacementsDictionary.Add("$rootnamespace$", rootNameSpace);
