@@ -165,7 +165,7 @@ namespace $rootnamespace$.$controllers$
             }
             catch ($safeItemNameSingular$DependencyValidationException $parameterSafeItemNameSingular$DependencyValidationException)
             {
-                return BadRequest($parameterSafeItemNameSingular$DependencyValidationException);
+                return BadRequest($parameterSafeItemNameSingular$DependencyValidationException.InnerException);
             }
             catch ($safeItemNameSingular$DependencyException $parameterSafeItemNameSingular$DependencyException)
             {
